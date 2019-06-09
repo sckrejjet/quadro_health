@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .con1 import get_hospitals_with_service, add_hospital_to_db, add_service_to_db
-from .helpers import generate_hosp_list
+from .helpers import generate_hosp_list, prepare_points
 
 
 def home(request):
@@ -38,7 +38,8 @@ def filtered_hospitals(request):
         result_html = generate_hosp_list(hosps_sql)
 
         resp_data = {
-            'html': result_html
+            'html': result_html,
+            'geoPoints': prepare_points(hosps_sql)
         }
 
         return JsonResponse(resp_data, status=200)

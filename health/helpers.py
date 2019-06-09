@@ -14,3 +14,15 @@ def generate_hosp_list(hosps):
                 </div>"""
 
     return result_html
+
+
+def prepare_points(hosps):
+    result_pts = []
+    for hosp in hosps:
+        result_pts.append({'geoX': hosp['geoX'], 'geoY': hosp['geoY']})
+        result_pts.append({
+            'coords': [hosp['geoX'], hosp['geoY']],
+            'text': hosp['name']
+        })
+
+    return result_pts;
