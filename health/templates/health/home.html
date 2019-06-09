@@ -1,0 +1,36 @@
+{% extends "health/base.html" %}
+{% block content %}
+	<div class="header">
+		<a href="adding_page">Добавить учреждение</a>
+		<a href="adding_service">Добавить услуги</a>
+	</div>
+	<div class="search-line">
+		<!-- <form action="about"> -->
+			<div class="search-container">
+				<input type="edit" id="search-edit" class="search-edit">
+				<input type="button" class="search-button" value="GO" onclick="goClick()">
+			</div>
+		<!-- </form> -->
+	</div>
+    <div class="main-container">
+	    <div class="items-container" id="items-container">
+		{% for hospital in hospitals %}
+			<div class="item">
+				<div class="item-img-div">
+					<img class="item-img" src="static/health/cat.jpg">
+				</div>
+				<div class="item-text">
+					<div class="item-name">{{ hospital.name }}</div>
+					<p>Where: {{ hospital.addr }}</p>
+					<p>Здесь будет информация...</p>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+		<div class="right-holder">
+			<div class="map-holder">
+				
+			</div>
+		</div>
+	</div>
+{% endblock content %}
