@@ -1,11 +1,16 @@
 {% extends "health/base.html" %}
 {% block content %}
 	<div class="header">
-		<a href="adding_page">Добавить учреждение</a>
-		<a href="adding_service">Добавить услуги</a>
+		<!-- <a href="adding_page">Добавить учреждение</a>
+		<a href="adding_service">Добавить услуги</a> -->
+		<img src="static/health/logo.png" class="main-logo">
+		<div class="menu-div">Главная</div>
+		<div class="menu-div">Новости</div>
+		<div class="menu-div">Контакты</div>
+		<div class="menu-div">О нас</div>
 	</div>
 	<div class="search-line">
-		<!-- <form action="about"> -->
+		<!-- <form action="about"> --> 
 			<div class="search-container">
 				<input type="edit" id="search-edit" class="search-edit">
 				<input type="button" class="search-button" value="GO" onclick="goClick()">
